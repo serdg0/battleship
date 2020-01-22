@@ -3,11 +3,16 @@ html body table {
   margin: 20px auto;
   table-layout: fixed;
   border-collapse: collapse;
+  border: 1px solid grey;
 }
 
 html body table th,
 html body table td {
-  border: 1px solid grey;
   border-collapse: collapse;
+}
+
+html body table button {
+  height: 45px;
+  width: 45px;
 }
 /*# sourceMappingURL=style.css.map */

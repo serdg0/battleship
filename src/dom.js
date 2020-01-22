@@ -8,7 +8,7 @@ function dispInit(game) {
     function printEle(col) {
       const cell = document.createElement('td');
       const button = document.createElement('button');
-      button.innerHTML = `a${row}${col}`;
+      button.innerHTML = `${row}${col}`;
       button.setAttribute('id', `a${row}${col}`);
       button.onclick = function() {
         game.receiveAttack(row, col);

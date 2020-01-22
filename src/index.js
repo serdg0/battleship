@@ -1,7 +1,7 @@
 import Gameboard from './Gameboard';
 import Ship from './Ship';
 import dispInit from './dom';
-import './assets/css/style.css';
+import css from './assets/css/style.css';
 
 
 const carrier = Ship({ name: 'carrier', length: 5 });
