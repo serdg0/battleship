@@ -11,10 +11,19 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "css-loader": "^3.4.2",
     "eslint": "^6.8.0",
     "eslint-config-airbnb-base": "^14.0.0",
     "eslint-plugin-import": "^2.20.0",
     "webpack": "^4.41.5",
     "webpack-cli": "^3.3.10"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/serdg0/battleship.git"
+  },
+  "bugs": {
+    "url": "https://github.com/serdg0/battleship/issues"
+  },
+  "homepage": "https://github.com/serdg0/battleship#readme"
 }

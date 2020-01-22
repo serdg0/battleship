@@ -1,0 +1,13 @@
+html body table {
+  max-width: 400px;
+  margin: 20px auto;
+  table-layout: fixed;
+  border-collapse: collapse;
+}
+
+html body table th,
+html body table td {
+  border: 1px solid grey;
+  border-collapse: collapse;
+}
+/*# sourceMappingURL=style.css.map */
