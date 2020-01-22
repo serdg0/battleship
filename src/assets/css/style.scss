@@ -5,7 +5,6 @@ html {
       margin: 20px auto;
       table-layout: fixed;
       border-collapse: collapse;
-      border: 1px solid grey;
       th,
       td {
         border-collapse: collapse;
@@ -13,6 +12,10 @@ html {
       button {
         height: 45px;
         width: 45px;
+      }
+      .pressed {
+        color: #ffffff;
+        background-color: #636363;
       }
     }
   }

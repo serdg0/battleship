@@ -3,7 +3,6 @@ html body table {
   margin: 20px auto;
   table-layout: fixed;
   border-collapse: collapse;
-  border: 1px solid grey;
 }
 
 html body table th,
@@ -14,5 +13,10 @@ html body table td {
 html body table button {
   height: 45px;
   width: 45px;
+}
+
+html body table .pressed {
+  color: #ffffff;
+  background-color: #636363;
 }
 /*# sourceMappingURL=style.css.map */

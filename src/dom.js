@@ -12,6 +12,8 @@ function dispInit(game) {
       button.setAttribute('id', `a${row}${col}`);
       button.onclick = function() {
         game.receiveAttack(row, col);
+        button.innerHTML = '*';
+        button.setAttribute('class', 'pressed');
       };
       cell.appendChild(button);
       rowTab.appendChild(cell);
