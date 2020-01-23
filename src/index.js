@@ -16,17 +16,17 @@ const ships = [carrier, battleship, submarine, destroyer, patrolBoat];
 
 
 
-let eapen = Player({name: 'Eapen', ships: ships})
-let computer = Player({name: 'Evil machine', ships: ships});
-eapen.attack(computer, 0, 0);
+let eapen = Player({ name: 'Eapen', ships: ships })
+let computer = Player({ name: 'Evil machine', ships: ships });
+//eapen.attack(computer, 0, 0);
 let game = eapen.board;
-game.putShip(ships[4], 0, 0);
-game.receiveAttack(0, 0);
-game.receiveAttack(0, 1);
-game.receiveAttack(5, 5);
+game.putShip(ships[4], 0, 0, true);
+//game.receiveAttack(0, 0);
+//game.receiveAttack(0, 1);
+//game.receiveAttack(5, 5);
 console.log(game.grid);
-console.log('hits: ' + game.hits);
-console.log('sanked: ' + game.sunkShips);
+console.log('hits: ' + game.hits.val());
+console.log('sanked: ' + game.sunkShips.val());
 dispInit(game)
 console.log(game.AllShipsDown())
 console.log(eapen)

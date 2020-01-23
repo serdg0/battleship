@@ -6,8 +6,8 @@ const Ship = ({ length, name }) => ({
     return this;
   },
   isSunk() {
-    return this.length == 0
+    return this.length === 0;
   },
-})
+});
 
 export default Ship;

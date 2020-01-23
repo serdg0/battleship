@@ -14,6 +14,7 @@ function dispInit(game) {
         game.receiveAttack(row, col);
         button.innerHTML = '*';
         button.setAttribute('class', 'pressed');
+        button.onclick = null;
       };
       cell.appendChild(button);
       rowTab.appendChild(cell);

@@ -3,23 +3,33 @@ const Coordinate = ({ ship = null, hit = false } = {}) => ({
   hit,
 })
 
+const Counter = () => {
+  let counter = 0;
+  return {
+    sum: () => counter += 1,
+    val: () => counter
+  }
+}
+
 const Gameboard = ({ ships }) => ({
-  hits: 0,
-  sunkShips: 0,
+  hits: Counter(),
+  sunkShips: Counter(),
   ships,
   grid: Array.from(Array(10), x => Array.from(Array(10), x => Coordinate())),
-  hitCounter() {
-    let hits = 0;
-    return function () {
-        return hits+=1;
-    }
-  },
-  putShip(ship, x, y) {
+  putShip(ship, x, y, ver = false) {
     let pos = ship.length;
-    while (pos > 0) {
-      this.grid[x][y].ship = ship;
-      pos -= 1;
-      y += 1;
+    if (ver) {
+      while (pos > 0) {
+        this.grid[x][y].ship = ship;
+        pos -= 1;
+        x += 1;
+      }
+    } else {
+      while (pos > 0) {
+        this.grid[x][y].ship = ship;
+        pos -= 1;
+        y += 1;
+      }
     }
     return this;
   },
@@ -27,18 +37,18 @@ const Gameboard = ({ ships }) => ({
     const coord = this.grid[x][y];
     if (coord.hit === false) {
       coord.hit = true;
-      this.hits += 1;
+      this.hits.sum();
     }
     if (coord.ship != null) {
       coord.ship.hit();
       if (coord.ship.isSunk()) {
-        this.sunkShips += 1;
+        this.sunkShips.sum();
       }
-    }
-    console.log(`${x},${y}`);
+      console.log(`${x},${y} Hit`);
+    } else console.log(`${x},${y} Miss Hit`);
   },
   AllShipsDown() {
-    return this.ships.length == this.sunkShips;
+    return this.ships.length === this.sunkShips;
   }
 })
 
