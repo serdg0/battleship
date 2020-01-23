@@ -3,11 +3,17 @@ const Coordinate = ({ ship = null, hit = false } = {}) => ({
   hit,
 })
 
-const Gameboard = ({ ships = ships } = {}) => ({
+const Gameboard = ({ ships }) => ({
   hits: 0,
   sunkShips: 0,
   ships,
   grid: Array.from(Array(10), x => Array.from(Array(10), x => Coordinate())),
+  hitCounter() {
+    let hits = 0;
+    return function () {
+        return hits+=1;
+    }
+  },
   putShip(ship, x, y) {
     let pos = ship.length;
     while (pos > 0) {
