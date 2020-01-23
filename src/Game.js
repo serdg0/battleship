@@ -1,5 +1,6 @@
 import Player from "./Player";
-Game() {
+
+const Game = () => {
   let player = Player({ name = 'Player' });
   let computer = Player({ name = 'Evil machine' });
 }

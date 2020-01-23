@@ -24,7 +24,7 @@ game.putShip(ships[4], 0, 0, true);
 //game.receiveAttack(0, 0);
 //game.receiveAttack(0, 1);
 //game.receiveAttack(5, 5);
-console.log(game.grid);
+console.log(eapen.board.grid);
 console.log('hits: ' + game.hits.val());
 console.log('sanked: ' + game.sunkShips.val());
 dispInit(game)
