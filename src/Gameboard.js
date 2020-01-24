@@ -18,27 +18,81 @@ const Gameboard = ({ ships }) => ({
   sunkShips: Counter(),
   ships,
   grid: Array.from(Array(10), x => Array.from(Array(10), x => Coordinate())),
-  putShip(ship, x, y, ver = false) {
-    if (this.grid[x][y].ship != null || this.grid[x][y].bounded == true){
-      return '';
-    }
+  putShip(ship, x, y, hor = true) {
     let pos = ship.length;
-
-    if (ver) {
+    let posC = pos;
+    let xC = x;
+    let yC = y;
+    let boundings = [];
+    if (hor) {
+      while (posC > 0) {
+        this.grid[xC][yC].ship = ship;
+        posC -= 1;
+        yC += 1;
+      }
       while (pos > 0) {
-        let boundings =  [this.grid[x-1][y], this.grid[x+1][y], this.grid[x][y-1], this.grid[x][y+1], this.grid[x-1][y+1], this.grid[x-1][y-1], this.grid[x+1][y+1], this.grid[x+1][y-1]]
-        boundings.map(realCoords => {
-          realCoords.bounded = true;
-        })
-        this.grid[x][y].ship = ship;
+        if ((x - 1) > 0 && this.grid[x - 1][y].ship == null) {
+          boundings.push(this.grid[x - 1][y]);
+        }
+        if ((x + 1) < 10 && this.grid[x + 1][y].ship == null) {
+          boundings.push(this.grid[x + 1][y]);
+        }
+        if ((y - 1) > 0 && this.grid[x][y - 1].ship == null) {
+          boundings.push(this.grid[x][y - 1]);
+        }
+        if ((y + 1) < 10 && this.grid[x][y + 1].ship == null) {
+          boundings.push(this.grid[x][y + 1]);
+        }
+        if ((x - 1) > 0 && (y + 1) < 10 && this.grid[x - 1][y + 1].ship == null) {
+          boundings.push(this.grid[x - 1][y + 1]);
+        }
+        if ((x - 1) > 0 && (y - 1) > 0 && this.grid[x - 1][y - 1].ship == null) {
+          boundings.push(this.grid[x - 1][y - 1]);
+        }
+        if ((x + 1) < 10 && (y + 1) < 10 && this.grid[x + 1][y + 1].ship == null) {
+          boundings.push(this.grid[x + 1][y + 1]);
+        }
+        if ((x + 1) < 10 && (y - 1) > 0 && this.grid[x + 1][y - 1].ship == null) {
+          boundings.push(this.grid[x + 1][y - 1]);
+        }
+        boundings.map(b => b.bounded = true);
+        y += 1;
         pos -= 1;
-        x += 1;
       }
     } else {
+      while (posC > 0) {
+        this.grid[xC][yC].ship = ship;
+        posC -= 1;
+        xC += 1;
+      }
       while (pos > 0) {
-        this.grid[x][y].ship = ship;
+        if ((x - 1) > 0 && this.grid[x - 1][y].ship == null) {
+          boundings.push(this.grid[x - 1][y]);
+        }
+        if ((x + 1) < 10 && this.grid[x + 1][y].ship == null) {
+          boundings.push(this.grid[x + 1][y]);
+        }
+        if ((y - 1) > 0 && this.grid[x][y - 1].ship == null) {
+          boundings.push(this.grid[x][y - 1]);
+        }
+        if ((y + 1) < 10 && this.grid[x][y + 1].ship == null) {
+          boundings.push(this.grid[x][y + 1]);
+        }
+        if ((x - 1) > 0 && (y + 1) < 10 && this.grid[x - 1][y + 1].ship == null) {
+          boundings.push(this.grid[x - 1][y + 1]);
+        }
+        if ((x - 1) > 0 && (y - 1) > 0 && this.grid[x - 1][y - 1].ship == null) {
+          boundings.push(this.grid[x - 1][y - 1]);
+        }
+        if ((x + 1) < 10 && (y + 1) < 10 && this.grid[x + 1][y + 1].ship == null) {
+          boundings.push(this.grid[x + 1][y + 1]);
+        }
+        if ((x + 1) < 10 && (y - 1) > 0 && this.grid[x + 1][y - 1].ship == null) {
+          boundings.push(this.grid[x + 1][y - 1]);
+        }
+        boundings.map(b => b.bounded = true);
+        x += 1;
         pos -= 1;
-        y += 1;
       }
     }
     return this;

@@ -20,7 +20,7 @@ let eapen = Player({ name: 'Eapen', ships: ships })
 let computer = Player({ name: 'Evil machine', ships: ships });
 //eapen.attack(computer, 0, 0);
 let game = eapen.board;
-game.putShip(ships[4], 0, 0, true);
+game.putShip(ships[4], 0, 0, false);
 //game.receiveAttack(0, 0);
 //game.receiveAttack(0, 1);
 //game.receiveAttack(5, 5);
