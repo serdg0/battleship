@@ -58,7 +58,7 @@ const Gameboard = ({ ships }) => ({
     let spaceAvailable = true;
     if (hor) {
       while (posD > 0) {
-        if (this.grid[x][y].bounded || this.grid[x][y].ship != null) {
+        if (this.grid[x][yD].bounded || this.grid[x][yD].ship != null) {
           spaceAvailable = false;
         }
         yD += 1;
@@ -79,7 +79,7 @@ const Gameboard = ({ ships }) => ({
       } else console.log(`Space not available at ${x},${y}`);
     } else {
       while (posD > 0) {
-        if (this.grid[x][y].bounded || this.grid[x][y].ship != null) {
+        if (this.grid[xD][y].bounded || this.grid[xD][y].ship != null) {
           spaceAvailable = false;
         }
         xD += 1;

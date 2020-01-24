@@ -22,6 +22,8 @@ let computer = Player({ name: 'Evil machine', ships: ships });
 let game = eapen.board;
 game.putShip(ships[4], 0, 0, false);
 game.putShip(ships[4], 2, 2, false);
+game.putShip(ships[4], 0, 3, false);
+game.putShip(ships[1], 7, 2, true);
 //game.receiveAttack(0, 0);
 //game.receiveAttack(0, 1);
 //game.receiveAttack(5, 5);
