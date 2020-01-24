@@ -40,6 +40,10 @@ const Bounder = (x, y, grid, boundings) => {
   return boundings;
 }
 
+const hitAShip = () => {
+  return true;
+}
+
 const Gameboard = ({ ships }) => ({
   hits: Counter(),
   missedHits: Counter(),
@@ -113,14 +117,17 @@ const Gameboard = ({ ships }) => ({
         this.sunkShips.sum();
       }
       console.log(`${x},${y} Hit Total hits: ${this.hits.val()}`);
+      this.lastHit = true;
     } else {
       this.missedHits.sum();
-      console.log(`${x},${y} Miss Hit. Total missed: ${this.missedHits.val()}`)
+      console.log(`${x},${y} Miss Hit. Total missed: ${this.missedHits.val()}`);
+      this.lastHit = false;
     };
   },
   AllShipsDown() {
     return this.ships.length === this.sunkShips;
-  }
+  },
+  lastHit: false,
 })
 
 export default Gameboard;
