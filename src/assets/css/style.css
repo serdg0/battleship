@@ -19,4 +19,12 @@ html body table .pressed {
   color: #ffffff;
   background-color: #636363;
 }
+
+html body table .ship {
+  background-color: red;
+}
+
+html body table .bounded {
+  background-color: seagreen;
+}
 /*# sourceMappingURL=style.css.map */

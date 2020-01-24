@@ -9,6 +9,12 @@ function dispInit(game) {
       const cell = document.createElement('td');
       const button = document.createElement('button');
       button.innerHTML = `${row}${col}`;
+      if (game.grid[row][col].ship != null) {
+        button.setAttribute('class', 'ship');
+      }
+      if (game.grid[row][col].bounded == true) {
+        button.setAttribute('class', 'bounded');
+      }
       button.setAttribute('id', `a${row}${col}`);
       button.onclick = function() {
         game.receiveAttack(row, col);
