@@ -3,7 +3,7 @@ import Ship from './Ship';
 import dispInit from './dom';
 import Player from './Player';
 import Game from './Game';
-import './assets/css/style.css';
+import css from './assets/css/style.css';
 
 //let computer = Player({ name: 'Evil machine', ships: ships });
 //eapen.attack(computer, 0, 0);

@@ -27,4 +27,9 @@ html body table .ship {
 html body table .bounded {
   background-color: seagreen;
 }
+
+html body .board {
+  width: 500px;
+  border: 4px grey solid;
+}
 /*# sourceMappingURL=style.css.map */
