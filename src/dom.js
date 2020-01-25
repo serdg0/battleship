@@ -1,6 +1,4 @@
-
-
-function dispInit(game) {
+function renderBoard(game) {
   const boardOne = document.createElement('table');
   const arr = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
 
@@ -31,7 +29,12 @@ function dispInit(game) {
     boardOne.appendChild(rowTab);
   }
   arr.forEach(printRow);
-  document.getElementById('board-1').appendChild(boardOne);
+  return boardOne;
+}
+
+function dispInit(board1, board2) {
+  document.getElementById('board-1').appendChild(renderBoard(board1));
+  document.getElementById('board-2').appendChild(renderBoard(board2));
 }
 
 export default dispInit;
