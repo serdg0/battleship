@@ -1,8 +1,36 @@
 import Player from "./Player";
-import sampleSize from 'lodash.samplesize';
+//import sampleSize from 'lodash.samplesize';
 
-const Game = (player1, player2) => {
+const changeTurn = (id) => {
+  if (id == 0) {
+    return 1
+  } else {
+    return 0
+  }
+}
+
+const clickFunc = (currentPlayer, enemy, x, y) =>  {
+  let currentPlayerId;
+  currentPlayer.attack(enemy, x, y);
+  if (enemy.board.AllShipsDown()) {
+      console.log('GAME OVER');
+  }
+if (enemy.board.grid[x][y].ship == null) {
+  currentPlayerId = changeTurn(currentPlayer.id);
+  if (player.id == currentPlayerId) {
+      currentPlayer = player;
+      enemy = computer;
+    } else {
+      currentPlayer = computer;
+      enemy = player;
+    };
+  } 
+}
+
+const MainGame = (player1, player2) => {
   /*****************************************************************/
+
+
   // get player name from dom
   // Get ship positions 
   //Player 01 ships
@@ -23,4 +51,4 @@ const Game = (player1, player2) => {
   player2.board.putShip(player2.board.ships[3], 5, 8, false);
 }
 
-export default Game;
+export  {MainGame, clickFunc};
