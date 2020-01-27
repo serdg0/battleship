@@ -1,7 +1,7 @@
 import Player from "./Player";
 //import sampleSize from 'lodash.samplesize';
 
-const changeTurn = (id) => {
+const changeTurn = (currentPlayer, enemy) => {
   if (id == 0) {
     return 1
   } else {
@@ -9,22 +9,22 @@ const changeTurn = (id) => {
   }
 }
 
-const clickFunc = (currentPlayer, enemy, x, y) =>  {
+const clickFunc = (currentPlayer, enemy, x, y) => {
   let currentPlayerId;
   currentPlayer.attack(enemy, x, y);
   if (enemy.board.AllShipsDown()) {
-      console.log('GAME OVER');
+    console.log('GAME OVER');
   }
-if (enemy.board.grid[x][y].ship == null) {
-  currentPlayerId = changeTurn(currentPlayer.id);
-  if (player.id == currentPlayerId) {
+  if (enemy.board.grid[x][y].ship == null) {
+    currentPlayerId = changeTurn(currentPlayer.id);
+    if (player.id == currentPlayerId) {
       currentPlayer = player;
       enemy = computer;
     } else {
       currentPlayer = computer;
       enemy = player;
     };
-  } 
+  }
 }
 
 const MainGame = (player1, player2) => {
@@ -51,4 +51,4 @@ const MainGame = (player1, player2) => {
   player2.board.putShip(player2.board.ships[3], 5, 8, false);
 }
 
-export  {MainGame, clickFunc};
+export { MainGame, clickFunc };

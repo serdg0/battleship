@@ -1,4 +1,4 @@
-import {clickFunc, MainGame} from './Game';
+import { clickFunc, MainGame } from './Game';
 
 function renderPBoard(game) {
   const boardOne = document.createElement('table');
@@ -18,12 +18,6 @@ function renderPBoard(game) {
         button.setAttribute('class', 'bounded');
       }
       button.setAttribute('id', `a${row}${col}`);
-      button.onclick = function() {
-        game.receiveAttack(row, col);
-        button.innerHTML = '*';
-        button.setAttribute('class', 'pressed');
-        button.onclick = null;
-      };
       cell.appendChild(button);
       rowTab.appendChild(cell);
     }
@@ -47,8 +41,7 @@ function renderEBoard(currentPlayer, enemy) {
       const button = document.createElement('button');
       button.innerHTML = `${row}${col}`;
       button.setAttribute('id', `a${row}${col}`);
-      button.onclick = function() {
-        game.receiveAttack(row, col);
+      button.onclick = () => {
         clickFunc(currentPlayer, enemy, row, col);
         if (game.grid[row][col].ship != null) {
           button.setAttribute('class', 'ship');
