@@ -2,7 +2,7 @@ import Gameboard from './Gameboard';
 import Ship from './Ship';
 import dispInit from './dom';
 import Player from './Player';
-import MainGame from './Game';
+import Game from './Game';
 import css from './assets/css/style.css';
 
 //let computer = Player({ name: 'Evil machine', ships: ships });
@@ -30,7 +30,8 @@ const patrolBoat = Ship({ name: 'patrolBoat', length: 2 });
 
 const ships = [carrier, battleship, submarine, destroyer, patrolBoat];
 
-const player = Player({ name: 'Player', ships: ships });
-const computer = Player({ name: 'Evil machine', ships: ships });
-//MainGame(player, computer);
+const player = Player({ id: 0, name: 'Player', ships: ships });
+const computer = Player({ id: 1, name: 'Evil machine', ships: ships });
+
+Game(player, computer);
 dispInit(player, computer);
