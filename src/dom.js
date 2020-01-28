@@ -145,10 +145,16 @@ const compPosition = (computerBoard) => {
   const vertHor = () => sampleSize([true, false], 1);
   const coorDice = () => sampleSize(coords, 1);
   iterator.forEach(x => {
-    computerBoard.putShip(shipAry[x], coorDice()[0], coorDice()[0], vertHor()[0])
-  })
+    function itrate() {
+      if (!computerBoard.putShip(shipAry[x], coorDice()[0], coorDice()[0], vertHor()[0])) {
+        itrate();
+      }
+    }
+    itrate();
+  });
   return computerBoard;
 }
+
 
 function shipPlacement(player, player2) {
   const selectors = document.getElementById('selector');

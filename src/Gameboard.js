@@ -69,6 +69,7 @@ const Gameboard = ({ ships }) => ({
         posD -= 1;
       }
       if (spaceAvailable) {
+        console.log(`Ship place at ${x},${y} align: horizontal`);
         while (posC > 0) {
           this.grid[xC][yC].ship = ship;
           posC -= 1;
@@ -90,6 +91,7 @@ const Gameboard = ({ ships }) => ({
         posD -= 1;
       }
       if (spaceAvailable) {
+        console.log(`Ship place at ${x},${y} align: vertical`);
         while (posC > 0) {
           this.grid[xC][yC].ship = ship;
           posC -= 1;
