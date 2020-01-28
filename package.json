@@ -15,7 +15,6 @@
     "eslint": "^6.8.0",
     "eslint-config-airbnb-base": "^14.0.0",
     "eslint-plugin-import": "^2.20.0",
-    "lodash.samplesize": "^4.2.0",
     "style-loader": "^1.1.3",
     "webpack": "^4.41.5",
     "webpack-cli": "^3.3.10"
@@ -29,6 +28,7 @@
   },
   "homepage": "https://github.com/serdg0/battleship#readme",
   "dependencies": {
+    "lodash.samplesize": "^4.2.0",
     "lodash.shuffle": "^4.2.0"
   }
 }

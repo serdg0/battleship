@@ -1,6 +1,6 @@
-import Gameboard from "./Gameboard";
+import Gameboard from './Gameboard';
 
-const Player = ({ name = 'Player', ships, id = 0} = {}) => ({
+const Player = ({ name = 'Player', ships, id = 0 } = {}) => ({
   name,
   id,
   attackLog: [],
@@ -8,7 +8,7 @@ const Player = ({ name = 'Player', ships, id = 0} = {}) => ({
   attack(enemy, x, y) {
     this.attackLog.push([x, y]);
     enemy.board.receiveAttack(x, y);
-  }, 
+  },
 });
 
 export default Player;

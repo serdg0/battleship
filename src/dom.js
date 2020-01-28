@@ -1,6 +1,6 @@
-import { clickFunc, MainGame } from './Game';
 import shuffle from 'lodash.shuffle';
 import sampleSize from 'lodash.samplesize';
+import clickFunc from './Game';
 
 function renderPBoard(game) {
   const boardOne = document.createElement('table');
@@ -16,7 +16,7 @@ function renderPBoard(game) {
       if (game.grid[row][col].ship != null) {
         button.setAttribute('class', 'ship');
       }
-      if (game.grid[row][col].bounded == true) {
+      if (game.grid[row][col].bounded === true) {
         button.setAttribute('class', 'bounded');
       }
       button.setAttribute('id', `Com${row}${col}`);
@@ -124,7 +124,7 @@ function shipPosBoard(player, ship, hor, pressed = false) {
         button.setAttribute('class', 'ship');
         button.onclick = null;
       }
-      if (game.grid[row][col].bounded == true) {
+      if (game.grid[row][col].bounded === true) {
         button.setAttribute('class', 'bounded');
         button.onclick = null;
       }
@@ -226,8 +226,6 @@ function shipPlacement(player, player2) {
       compPosition(player2.board);
       document.getElementById('board-1').appendChild(renderPBoard(player.board));
       document.getElementById('board-2').appendChild(renderEBoard(player2, player));
-      document.getElementById('board-3').appendChild(renderComBoard(player, player2));
-
     }
   }
 
@@ -243,9 +241,9 @@ function shipPlacement(player, player2) {
 
 
 function dispInit(player1, player2) {
+  document.getElementById('message').innerHTML = '';
+  document.getElementById('after-game').innerHTML = '';
   shipPlacement(player1, player2);
-  console.log('called');
-
 }
 
 export default dispInit;
