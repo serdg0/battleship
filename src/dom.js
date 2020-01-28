@@ -1,4 +1,6 @@
 import { clickFunc, MainGame } from './Game';
+import shuffle from 'lodash.shuffle';
+import sampleSize from 'lodash.samplesize';
 
 function renderPBoard(game) {
   const boardOne = document.createElement('table');
@@ -135,39 +137,83 @@ function shipPosBoard(player, ship, hor) {
 }
 
 function shipPlacement(player) {
+  const selectors = document.getElementById('selector');
+  const direction = document.createElement('input');
+  direction.type = 'checkbox';
+
   const carrierBtn = document.createElement('button');
   carrierBtn.innerHTML = 'Carrier L5';
   carrierBtn.onclick = () => {
-    shipPosBoard(player, player.board.ships[0], false);
+    if (direction.checked == false) {
+      shipPosBoard(player, player.board.ships[0], false);
+    } else {
+      shipPosBoard(player, player.board.ships[0], true);
+    }
+    
+    carrierBtn.disabled = true;
   };
 
   const battleshipBtn = document.createElement('button');
   battleshipBtn.innerHTML = 'BattleShip L4';
   battleshipBtn.onclick = () => {
-    shipPosBoard(player, player.board.ships[1], false);
+    if (direction.checked == false) {
+      shipPosBoard(player, player.board.ships[1], false);
+    } else {
+      shipPosBoard(player, player.board.ships[1], true);
+    }
+    battleshipBtn.disabled = true;
   };
   const submarineBtn = document.createElement('button');
   submarineBtn.innerHTML = 'Submarine L3';
   submarineBtn.onclick = () => {
-    shipPosBoard(player, player.board.ships[2], false);
+    if (direction.checked == false) {
+      shipPosBoard(player, player.board.ships[2], false);
+    } else {
+      shipPosBoard(player, player.board.ships[2], true);
+    }
+    
+    submarineBtn.disabled = true;
   };
   const destroyerBtn = document.createElement('button');
   destroyerBtn.innerHTML = 'Destroyer L3';
   destroyerBtn.onclick = () => {
-    shipPosBoard(player, player.board.ships[3], false);
+    if (direction.checked == false) {
+      shipPosBoard(player, player.board.ships[3], false);
+    } else {
+      shipPosBoard(player, player.board.ships[3], true);
+    }
+    
+    destroyerBtn.disabled = true;
   };
   const patrolboatBtn = document.createElement('button');
   patrolboatBtn.innerHTML = 'PatrolBoat L2';
   patrolboatBtn.onclick = () => {
-    shipPosBoard(player, player.board.ships[4], false);
+    if (direction.checked == false) {
+      shipPosBoard(player, player.board.ships[4], false);
+    } else {
+      shipPosBoard(player, player.board.ships[4], true);
+    }
+    patrolboatBtn.disabled = true;
   };
 
-  const selectors = document.getElementById('selector');
   selectors.appendChild(carrierBtn);
   selectors.appendChild(battleshipBtn);
   selectors.appendChild(submarineBtn);
   selectors.appendChild(destroyerBtn);
   selectors.appendChild(patrolboatBtn);
+  selectors.appendChild(direction);
+}
+
+const compPosition = (computerBoard) => {
+  const shipAry = shuffle(computerBoard.ships);
+  const iterator = [0, 1, 2, 3, 4];
+  const coords = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+  const vertHor = () => sampleSize([true, false], 1);
+  const coorDice = () => sampleSize(coords, 1); 
+  iterator.forEach(x => {
+    computerBoard.putShip(shipAry[x], coorDice()[0], coorDice()[0], vertHor()[0])
+  })
+  return computer;
 }
 
 function dispInit(player1, player2) {
@@ -178,3 +224,4 @@ function dispInit(player1, player2) {
 }
 
 export default dispInit;
+export { compPosition };

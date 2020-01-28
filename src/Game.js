@@ -1,5 +1,4 @@
 import Player from "./Player";
-//import sampleSize from 'lodash.samplesize';
 
 const changeTurn = (id) => {
   if (id === 0) {
@@ -14,20 +13,13 @@ const changeTurn = (id) => {
 }
 
 const clickFunc = (currentPlayer, enemy, x, y) => {
-  let currentPlayerId;
+
   currentPlayer.attack(enemy, x, y);
   if (enemy.board.AllShipsDown()) {
     console.log('GAME OVER');
   }
   if (enemy.board.grid[x][y].ship == null) {
     changeTurn(enemy.id);
-    // if (player.id == currentPlayerId) {
-    //   currentPlayer = player;
-    //   enemy = computer;
-    // } else {
-    //   currentPlayer = computer;
-    //   enemy = player;
-    // };
   }
 }
 

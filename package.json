@@ -27,5 +27,8 @@
   "bugs": {
     "url": "https://github.com/serdg0/battleship/issues"
   },
-  "homepage": "https://github.com/serdg0/battleship#readme"
+  "homepage": "https://github.com/serdg0/battleship#readme",
+  "dependencies": {
+    "lodash.shuffle": "^4.2.0"
+  }
 }
