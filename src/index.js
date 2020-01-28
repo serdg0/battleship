@@ -18,6 +18,6 @@ const ships = [carrier, battleship, submarine, destroyer, patrolBoat];
 const player = Player({ id: 0, name: 'Player', ships: ships });
 const computer = Player({ id: 1, name: 'Evil machine', ships: ships });
 
-compPosition(computer.board)
+//compPosition(computer.board);
 Game(player, computer);
 dispInit(player, computer);

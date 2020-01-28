@@ -80,7 +80,7 @@ const Gameboard = ({ ships }) => ({
           y += 1;
           pos -= 1;
         }
-      } else console.log(`Space not available at ${x},${y}`);
+      } else return false;
     } else {
       while (posD > 0) {
         if (xD > 9 || (this.grid[xD][y].bounded || this.grid[xD][y].ship != null)) {
@@ -101,9 +101,9 @@ const Gameboard = ({ ships }) => ({
           x += 1;
           pos -= 1;
         }
-      } else console.log(`Space not available at ${x},${y}`);
+      } else return false;
     }
-    return this;
+    return true;
   },
   receiveAttack(x, y) {
     const coord = this.grid[x][y];
