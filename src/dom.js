@@ -222,7 +222,8 @@ function shipPlacement(player, player2) {
   startBtn.innerHTML = 'Start Game';
   startBtn.onclick = () => {
     if (counter === 5) {
-      document.getElementById('game-setup').innerHTML = ' ';
+      document.getElementById('setup-board').innerHTML = ' ';
+      document.getElementById('selector').innerHTML = ' ';
       compPosition(player2.board);
       document.getElementById('board-1').appendChild(renderPBoard(player.board));
       document.getElementById('board-2').appendChild(renderEBoard(player2, player));

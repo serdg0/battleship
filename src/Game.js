@@ -18,17 +18,19 @@ const checkWin = (currentPlayer, enemy) => {
   const newGame = document.createElement('button');
   newGame.innerHTML = 'Start a new game';
   newGame.onclick = () => {
-    dispInit(player, computer);
+    document.location.reload();
   }
   if (currentPlayer.board.AllShipsDown()) {
     console.log(`GAME OVER! ${enemy.name} Wins`);
-    document.getElementById('game').innerHTML = '';
+    document.getElementById('board-1').innerHTML = '';
+    document.getElementById('board-2').innerHTML = '';
     document.getElementById('message').innerHTML = `${enemy.name} Wins`;
     document.getElementById('after-game').appendChild(newGame);
   }
   if (enemy.board.AllShipsDown()) {
     console.log(`GAME OVER! ${currentPlayer.name} Wins`);
-    document.getElementById('game').innerHTML = '';
+    document.getElementById('board-1').innerHTML = '';
+    document.getElementById('board-2').innerHTML = '';
     document.getElementById('message').innerHTML = `${currentPlayer.name} Wins`;
     document.getElementById('after-game').appendChild(newGame);
   }

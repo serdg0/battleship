@@ -25,6 +25,8 @@ function gameStarter() {
 
   const player = Player({ id: 0, name: 'Player', ships: ships });
   const computer = Player({ id: 1, name: 'Evil machine', ships: compships });
+  document.getElementById('board-1').innerHTML = '';
+  document.getElementById('board-2').innerHTML = '';
   dispInit(player, computer);
 }
 
