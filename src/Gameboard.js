@@ -126,7 +126,6 @@ const Gameboard = ({ ships }) => ({
     };
   },
   AllShipsDown() {
-    console.log(`Length: ${this.ships.length} sunk : ${this.sunkShips.val()}`);
     return this.ships.length === this.sunkShips.val();
   },
   lastHit: false,
