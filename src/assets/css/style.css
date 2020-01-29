@@ -11,21 +11,25 @@ html body table td {
 }
 
 html body table button {
-  height: 45px;
-  width: 45px;
+  background-color: #a8a8a8;
+  color: #ffffff;
+  height: 50px;
+  width: 50px;
+  background-size: cover;
+  margin: -1px;
+  border: none;
 }
 
 html body table .pressed {
-  color: #ffffff;
-  background-color: #636363;
+  background-color: #ffc400;
 }
 
 html body table .ship {
-  background-color: red;
+  background-color: #fd3939;
 }
 
 html body table .bounded {
-  background-color: seagreen;
+  background-color: #28a745;
 }
 
 html body .board {

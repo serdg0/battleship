@@ -45,10 +45,12 @@ function renderEBoard(currentPlayer, enemy) {
       button.setAttribute('id', `p${row}${col}`);
       button.onclick = () => {
         clickFunc(currentPlayer, enemy, row, col);
+
         if (game.grid[row][col].ship != null) {
+          button.style.backgroundImage = `url('./img/${game.grid[row][col].img}.png')`;
           button.setAttribute('class', 'ship');
         } else {
-          button.innerHTML = '*';
+          button.style.backgroundImage = "url('./img/nill.png ')";
           button.setAttribute('class', 'pressed');
         }
         button.onclick = null;
@@ -122,10 +124,12 @@ function shipPosBoard(player, ship, hor, pressed = false) {
       }
       if (game.grid[row][col].ship != null) {
         button.setAttribute('class', 'ship');
+        button.style.backgroundImage = `url('./img/${game.grid[row][col].img}.png')`;
         button.onclick = null;
       }
       if (game.grid[row][col].bounded === true) {
         button.setAttribute('class', 'bounded');
+        button.style.backgroundImage = `url('./img/${game.grid[row][col].img}.png')`;
         button.onclick = null;
       }
       cell.appendChild(button);

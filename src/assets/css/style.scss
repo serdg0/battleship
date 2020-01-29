@@ -10,18 +10,22 @@ html {
         border-collapse: collapse;
       }
       button {
-        height: 45px;
-        width: 45px;
+        background-color: #a8a8a8;
+        color: #ffffff;
+        height: 50px;
+        width: 50px;
+        background-size: cover;
+        margin: -1px;
+        border: none;
       }
       .pressed {
-        color: #ffffff;
-        background-color: #636363;
+        background-color: #ffc400;
       }
       .ship {
-        background-color: red;
+        background-color: #fd3939;
       }
       .bounded {
-        background-color: seagreen;
+        background-color: #28a745;
       }
     }
     .board {

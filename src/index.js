@@ -7,19 +7,19 @@ import './assets/css/style.css';
 
 
 function gameStarter() {
-  const carrier = Ship({ name: 'carrier', length: 5 });
-  const battleship = Ship({ name: 'battleship', length: 4 });
-  const submarine = Ship({ name: 'submarine', length: 3 });
-  const destroyer = Ship({ name: 'destroyer', length: 3 });
-  const patrolBoat = Ship({ name: 'patrolBoat', length: 2 });
+  const carrier = Ship({ name: 'carrier', length: 5, imgArrV: ['top', 'mid', 'mid', 'mid', 'bottom'], imgArrH: ['top-h', 'mid-h', 'mid-h', 'mid-h', 'bottom-h'] });
+  const battleship = Ship({ name: 'battleship', length: 4, imgArrV: ['top', 'mid', 'mid', 'bottom'], imgArrH: ['top-h', 'mid-h', 'mid-h', 'bottom-h'] });
+  const submarine = Ship({ name: 'submarine', length: 3, imgArrV: ['top', 'mid', 'bottom'], imgArrH: ['top-h', 'mid-h', 'bottom-h'] });
+  const destroyer = Ship({ name: 'destroyer', length: 3, imgArrV: ['top', 'mid', 'bottom'], imgArrH: ['top-h', 'mid-h', 'bottom-h'] });
+  const patrolBoat = Ship({ name: 'patrolBoat', length: 2, imgArrV: ['top', 'bottom'], imgArrH: ['top-h', 'bottom-h'] });
 
   const ships = [carrier, battleship, submarine, destroyer, patrolBoat];
 
-  const compcarrier = Ship({ name: 'carrier', length: 5 });
-  const compbattleship = Ship({ name: 'battleship', length: 4 });
-  const compsubmarine = Ship({ name: 'submarine', length: 3 });
-  const compdestroyer = Ship({ name: 'destroyer', length: 3 });
-  const comppatrolBoat = Ship({ name: 'patrolBoat', length: 2 });
+  const compcarrier = Ship({ name: 'carrier', length: 5, imgArrV: ['top', 'mid', 'mid', 'mid', 'bottom'], imgArrH: ['top-h', 'mid-h', 'mid-h', 'mid-h', 'bottom-h'] });
+  const compbattleship = Ship({ name: 'battleship', length: 4, imgArrV: ['top', 'mid', 'mid', 'bottom'], imgArrH: ['top-h', 'mid-h', 'mid-h', 'bottom-h'] });
+  const compsubmarine = Ship({ name: 'submarine', length: 3, imgArrV: ['top', 'mid', 'bottom'], imgArrH: ['top-h', 'mid-h', 'bottom-h'] });
+  const compdestroyer = Ship({ name: 'submarine', length: 3, imgArrV: ['top', 'mid', 'bottom'], imgArrH: ['top-h', 'mid-h', 'bottom-h'] });
+  const comppatrolBoat = Ship({ name: 'patrolBoat', length: 2, imgArrV: ['top', 'bottom'], imgArrH: ['top-h', 'bottom-h'] });
 
   const compships = [compcarrier, compbattleship, compsubmarine, compdestroyer, comppatrolBoat];
 

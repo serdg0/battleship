@@ -7,7 +7,7 @@ const attackBot = (enemy, currentPlayer) => {
   const col = sampleSize([0, 1, 2, 3, 4, 5, 6, 7, 8, 9], 1);
   if (enemy.board.grid[row][col].hit === false) {
     currentPlayer.attack(enemy, row, col);
-    document.getElementById(`Com${row}${col}`).innerHTML = '*';
+    document.getElementById(`Com${row}${col}`).style.backgroundImage = `url('./img/${enemy.board.grid[row][col].img}.png')`;
     if (enemy.board.grid[row][col].ship == null) {
       changeTurn(enemy, currentPlayer);
     } else attackBot(enemy, currentPlayer);

@@ -1,7 +1,8 @@
-const Coordinate = ({ ship = null, hit = false, bounded = false } = {}) => ({
+const Coordinate = ({ ship = null, hit = false, bounded = false, img = 'nill' } = {}) => ({
   ship,
   hit,
   bounded,
+  img
 })
 
 const Counter = () => {
@@ -60,6 +61,7 @@ const Gameboard = ({ ships }) => ({
     let yD = y;
     let boundings = [];
     let spaceAvailable = true;
+    let count = 0;
     if (hor) {
       while (posD > 0) {
         if (yD > 9 || (this.grid[x][yD].bounded || this.grid[x][yD].ship != null)) {
@@ -71,12 +73,17 @@ const Gameboard = ({ ships }) => ({
       if (spaceAvailable) {
         while (posC > 0) {
           this.grid[xC][yC].ship = ship;
+          this.grid[xC][yC].img = ship.imgArrH[count];
+          count += 1;
           posC -= 1;
           yC += 1;
         }
         while (pos > 0) {
           boundings = Bounder(x, y, this.grid, boundings);
-          boundings.map(b => b.bounded = true);
+          boundings.map(b => {
+            b.bounded = true;
+            b.img = 'bound';
+          });
           y += 1;
           pos -= 1;
         }
@@ -92,12 +99,17 @@ const Gameboard = ({ ships }) => ({
       if (spaceAvailable) {
         while (posC > 0) {
           this.grid[xC][yC].ship = ship;
+          this.grid[xC][yC].img = ship.imgArrV[count];
+          count += 1;
           posC -= 1;
           xC += 1;
         }
         while (pos > 0) {
           boundings = Bounder(x, y, this.grid, boundings);
-          boundings.map(b => b.bounded = true);
+          boundings.map(b => {
+            b.bounded = true;
+            b.img = 'bound';
+          });
           x += 1;
           pos -= 1;
         }
