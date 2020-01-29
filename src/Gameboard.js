@@ -1,17 +1,25 @@
-const Coordinate = ({ ship = null, hit = false, bounded = false, img = 'nill' } = {}) => ({
+const Coordinate = ({
+  ship = null,
+  hit = false,
+  bounded = false,
+  img = 'nill',
+} = {}) => ({
   ship,
   hit,
   bounded,
-  img
-})
+  img,
+});
 
 const Counter = () => {
   let counter = 0;
   return {
-    sum: () => counter += 1,
-    val: () => counter
+    sum: () => {
+      counter += 1;
+      return counter;
+    },
+    val: () => counter,
   };
-}
+};
 
 const Bounder = (x, y, grid, boundings) => {
   if ((x - 1) >= 0 && grid[x - 1][y].ship == null) {
@@ -39,11 +47,11 @@ const Bounder = (x, y, grid, boundings) => {
     boundings.push(grid[x + 1][y - 1]);
   }
   return boundings;
-}
+};
 
-const hitAShip = () => {
-  return true;
-}
+// const hitAShip = () => {
+//   return true;
+// }
 
 const Gameboard = ({ ships }) => ({
   hits: Counter(),
@@ -142,6 +150,6 @@ const Gameboard = ({ ships }) => ({
     return this.ships.length === this.sunkShips.val();
   },
   lastHit: false,
-})
+});
 
 export default Gameboard;

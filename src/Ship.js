@@ -1,4 +1,9 @@
-const Ship = ({ length, name, imgArrV, imgArrH }) => ({
+const Ship = ({
+  length,
+  name,
+  imgArrV,
+  imgArrH,
+}) => ({
   length,
   name,
   imgArrV,
