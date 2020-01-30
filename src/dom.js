@@ -250,7 +250,6 @@ function shipPlacement(player, player2) {
   selectors.appendChild(destroyerBtn);
   selectors.appendChild(patrolboatBtn);
   selectors.appendChild(setDiv);
-
 }
 
 function dispInit(player1, player2) {

@@ -16,12 +16,11 @@ const attackBot = (enemy, currentPlayer) => {
 const checkWin = (currentPlayer, enemy) => {
   const newGame = document.createElement('button');
   newGame.innerHTML = 'Start a new game';
-  newGame.setAttribute('id', 'new-game-btn')
+  newGame.setAttribute('id', 'new-game-btn');
   newGame.onclick = () => {
     document.location.reload();
   };
   if (currentPlayer.board.AllShipsDown()) {
-    console.log(`GAME OVER! ${enemy.name} Won defeating the ${currentPlayer.name}`);
     let cells = document.getElementsByClassName('active-cell');
     cells = Array.from(cells);
     cells.forEach(button => {
@@ -31,7 +30,6 @@ const checkWin = (currentPlayer, enemy) => {
     document.getElementById('after-game').appendChild(newGame);
   }
   if (enemy.board.AllShipsDown()) {
-    console.log(`GAME OVER! ${currentPlayer.name} Wins`);
     let cells = document.getElementsByClassName('active-cell');
     cells = Array.from(cells);
     cells.forEach(button => {
@@ -45,12 +43,10 @@ const checkWin = (currentPlayer, enemy) => {
 const changeTurn = (currentPlayer, enemy) => {
   checkWin(currentPlayer, enemy);
   if (enemy.id === 0) {
-    console.log('Computers Turn');
     document.getElementById('board-2').style.display = 'none';
 
     attackBot(enemy, currentPlayer);
   } else {
-    console.log('Players Turn');
     document.getElementById('board-2').style.display = 'block';
   }
 };

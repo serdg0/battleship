@@ -54,7 +54,7 @@ const Gameboard = ({ ships }) => ({
   missedHits: Counter(),
   sunkShips: Counter(),
   ships,
-  grid: Array.from(Array(10), x => Array.from(Array(10), x => Coordinate())),
+  grid: Array.from(Array(10), () => Array.from(Array(10), () => Coordinate())),
   putShip(ship, x, y, hor = true) {
     let pos = ship.length;
     let posC = pos;
@@ -130,16 +130,13 @@ const Gameboard = ({ ships }) => ({
       coord.ship.hit();
       this.hits.sum();
       if (coord.ship.isSunk()) {
-        console.log('ship sunk********************************************');
         this.sunkShips.sum();
       }
-      console.log(`${x},${y} Hit Total hits: ${this.hits.val()}`);
       this.lastHit = true;
     } else {
       this.missedHits.sum();
-      console.log(`${x},${y} Miss Hit. Total missed: ${this.missedHits.val()}`);
       this.lastHit = false;
-    };
+    }
   },
   AllShipsDown() {
     return this.ships.length === this.sunkShips.val();
