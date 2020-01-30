@@ -18,7 +18,7 @@ html {
         border-collapse: collapse;
       }
       button {
-        background-color: #7c7c7c;
+        background-color: #2d2d2d;
         color: #ffffff;
         height: 50px;
         width: 50px;
@@ -38,9 +38,10 @@ html {
     }
     #message {
       font-size: 32px;
-      font-weight: 700;
+      font-weight: 400;
+      border: 5px solid #fd3939;
       margin-top: 25px;
-      height: 100px;
+      height: 150px;
       padding: 10px;
       background-color: #2d2d2d;
       color: #00ff3a;
@@ -84,6 +85,7 @@ html {
       background-color: #4eca6b;
       button {
         font-size: 24px;
+        font-weight: 700;
         background-color: #28a745;
         border: 1px solid #4eca6b;
         width: 100%;

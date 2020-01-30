@@ -128,7 +128,7 @@ const compPosition = (computerBoard) => {
 
 function shipPlacement(player, player2) {
   shipPosBoard(player, null, false);
-  document.getElementById('message').textContent = 'Align your ship before selecting your ship';
+  document.getElementById('message').textContent = 'Align your ship before selecting a ship';
   const selectors = document.getElementById('selector');
   let direction = false;
   const directionBtn = document.createElement('button');
