@@ -126,6 +126,7 @@ const compPosition = (computerBoard) => {
 
 
 function shipPlacement(player, player2) {
+  shipPosBoard(player, null, false);
   const selectors = document.getElementById('selector');
   const direction = document.createElement('input');
   direction.type = 'checkbox';

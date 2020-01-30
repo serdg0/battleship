@@ -1,5 +1,13 @@
 html {
   body {
+    font-family: 'Courier Prime', monospace;
+    h1 {
+      color: #484848;
+      margin: 30px auto;
+      text-align: center;
+      font-family: 'Bungee Inline', cursive;
+      font-size: 72px;
+    }
     table {
       max-width: 400px;
       margin: 20px auto;
@@ -10,7 +18,7 @@ html {
         border-collapse: collapse;
       }
       button {
-        background-color: #a8a8a8;
+        background-color: #7c7c7c;
         color: #ffffff;
         height: 50px;
         width: 50px;
@@ -30,7 +38,6 @@ html {
     }
     .board {
       width: 500px;
-      border: 4px grey solid;
     }
   }
 }
