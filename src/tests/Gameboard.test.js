@@ -2,7 +2,11 @@ import Gameboard from '../Gameboard';
 import Ship from '../Ship';
 
 describe('Gameboard', () => {
-    let ship = Ship({length: 1});
+    let ship = Ship({
+        length: 1,
+        imgArrV: ['top'],
+        imgArrH: ['top-h'],
+    });
     let ships = [ship]
     let game = Gameboard({ships});
 
