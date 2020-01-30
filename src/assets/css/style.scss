@@ -3,14 +3,14 @@ html {
     font-family: 'Courier Prime', monospace;
     h1 {
       color: #484848;
-      margin: 30px auto;
+      margin: 25px auto 50px auto;
       text-align: center;
       font-family: 'Bungee Inline', cursive;
       font-size: 72px;
     }
     table {
-      max-width: 400px;
-      margin: 20px auto;
+      max-width: 500px;
+      margin: 0 auto;
       table-layout: fixed;
       border-collapse: collapse;
       th,
@@ -38,6 +38,31 @@ html {
     }
     .board {
       width: 500px;
+    }
+    .ship-img {
+      height: 250px;
+      background-color: #28a745;
+      border: 1px solid #4eca6b;
+      img {
+        scale: 0.8;
+      }
+    }
+    .ship-img:disabled {
+      background-color: #4eca6b;
+    }
+    .carrier {
+      height: 260px;
+    }
+    .set-div {
+      padding: 0;
+      background-color: #4eca6b;
+      button {
+        font-size: 24px;
+        background-color: #28a745;
+        border: 1px solid #4eca6b;
+        width: 100%;
+        height: 50%;
+      }
     }
   }
 }

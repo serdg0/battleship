@@ -49,10 +49,6 @@ const Bounder = (x, y, grid, boundings) => {
   return boundings;
 };
 
-// const hitAShip = () => {
-//   return true;
-// }
-
 const Gameboard = ({ ships }) => ({
   hits: Counter(),
   missedHits: Counter(),

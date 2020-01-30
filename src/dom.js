@@ -43,6 +43,7 @@ function renderEBoard(currentPlayer, enemy) {
       const button = document.createElement('button');
       button.innerHTML = `${row}${col}`;
       button.setAttribute('id', `p${row}${col}`);
+      button.setAttribute('class', 'active-cell');
       button.onclick = () => {
         clickFunc(currentPlayer, enemy, row, col);
 
@@ -128,13 +129,18 @@ const compPosition = (computerBoard) => {
 function shipPlacement(player, player2) {
   shipPosBoard(player, null, false);
   const selectors = document.getElementById('selector');
-  const direction = document.createElement('input');
-  direction.type = 'checkbox';
+  let direction = false;
+  const directionBtn = document.createElement('button');
+  directionBtn.innerHTML = 'Rotate Ships';
+
   let counter = 0;
   const carrierBtn = document.createElement('button');
-  carrierBtn.innerHTML = 'Carrier L5';
+  const carrierImg = document.createElement('img');
+  carrierImg.src = 'img/career.png';
+  carrierBtn.appendChild(carrierImg);
+  carrierBtn.setAttribute('class', 'col-4 ship-img');
   carrierBtn.onclick = () => {
-    if (direction.checked === false) {
+    if (direction === false) {
       shipPosBoard(player, player.board.ships[0], false, true);
     } else {
       shipPosBoard(player, player.board.ships[0], true, true);
@@ -144,9 +150,12 @@ function shipPlacement(player, player2) {
   };
 
   const battleshipBtn = document.createElement('button');
-  battleshipBtn.innerHTML = 'BattleShip L4';
+  const battleshipImg = document.createElement('img');
+  battleshipImg.src = 'img/battleship.png';
+  battleshipBtn.appendChild(battleshipImg);
+  battleshipBtn.setAttribute('class', 'col-4 ship-img');
   battleshipBtn.onclick = () => {
-    if (direction.checked === false) {
+    if (direction === false) {
       shipPosBoard(player, player.board.ships[1], false, true);
     } else {
       shipPosBoard(player, player.board.ships[1], true, true);
@@ -155,9 +164,12 @@ function shipPlacement(player, player2) {
     battleshipBtn.disabled = true;
   };
   const submarineBtn = document.createElement('button');
-  submarineBtn.innerHTML = 'Submarine L3';
+  const submarineImg = document.createElement('img');
+  submarineImg.src = 'img/destroyer.png';
+  submarineBtn.appendChild(submarineImg);
+  submarineBtn.setAttribute('class', 'col-4 ship-img');
   submarineBtn.onclick = () => {
-    if (direction.checked === false) {
+    if (direction === false) {
       shipPosBoard(player, player.board.ships[2], false, true);
     } else {
       shipPosBoard(player, player.board.ships[2], true, true);
@@ -166,9 +178,12 @@ function shipPlacement(player, player2) {
     submarineBtn.disabled = true;
   };
   const destroyerBtn = document.createElement('button');
-  destroyerBtn.innerHTML = 'Destroyer L3';
+  const destroyerImg = document.createElement('img');
+  destroyerImg.src = 'img/destroyer.png';
+  destroyerBtn.appendChild(destroyerImg);
+  destroyerBtn.setAttribute('class', 'col-4 ship-img');
   destroyerBtn.onclick = () => {
-    if (direction.checked === false) {
+    if (direction === false) {
       shipPosBoard(player, player.board.ships[3], false, true);
     } else {
       shipPosBoard(player, player.board.ships[3], true, true);
@@ -177,9 +192,12 @@ function shipPlacement(player, player2) {
     destroyerBtn.disabled = true;
   };
   const patrolboatBtn = document.createElement('button');
-  patrolboatBtn.innerHTML = 'PatrolBoat L2';
+  const patrolboatImg = document.createElement('img');
+  patrolboatImg.src = 'img/patrol.png';
+  patrolboatBtn.appendChild(patrolboatImg);
+  patrolboatBtn.setAttribute('class', 'col-4 ship-img');
   patrolboatBtn.onclick = () => {
-    if (direction.checked === false) {
+    if (direction === false) {
       shipPosBoard(player, player.board.ships[4], false, true);
     } else {
       shipPosBoard(player, player.board.ships[4], true, true);
@@ -187,7 +205,23 @@ function shipPlacement(player, player2) {
     counter += 1;
     patrolboatBtn.disabled = true;
   };
-
+  directionBtn.onclick = () => {
+    if (direction === false) {
+      direction = true;
+      carrierImg.style.transform = 'rotate(90deg)';
+      battleshipImg.style.transform = 'rotate(90deg)';
+      submarineImg.style.transform = 'rotate(90deg)';
+      destroyerImg.style.transform = 'rotate(90deg)';
+      patrolboatImg.style.transform = 'rotate(90deg)';
+    } else {
+      direction = false;
+      carrierImg.style.transform = 'rotate(0deg)';
+      battleshipImg.style.transform = 'rotate(0deg)';
+      submarineImg.style.transform = 'rotate(0deg)';
+      destroyerImg.style.transform = 'rotate(0deg)';
+      patrolboatImg.style.transform = 'rotate(0deg)';
+    }
+  };
   const startBtn = document.createElement('button');
   startBtn.innerHTML = 'Start Game';
   startBtn.onclick = () => {
@@ -199,14 +233,17 @@ function shipPlacement(player, player2) {
       document.getElementById('board-2').appendChild(renderEBoard(player2, player));
     }
   };
-
+  const setDiv = document.createElement('div');
+  setDiv.setAttribute('class', 'col-4 set-div');
+  setDiv.appendChild(directionBtn);
+  setDiv.appendChild(startBtn);
   selectors.appendChild(carrierBtn);
   selectors.appendChild(battleshipBtn);
   selectors.appendChild(submarineBtn);
   selectors.appendChild(destroyerBtn);
   selectors.appendChild(patrolboatBtn);
-  selectors.appendChild(direction);
-  selectors.appendChild(startBtn);
+  selectors.appendChild(setDiv);
+
 }
 
 function dispInit(player1, player2) {

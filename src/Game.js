@@ -21,15 +21,21 @@ const checkWin = (currentPlayer, enemy) => {
   };
   if (currentPlayer.board.AllShipsDown()) {
     console.log(`GAME OVER! ${enemy.name} Wins`);
-    document.getElementById('board-1').innerHTML = '';
-    document.getElementById('board-2').innerHTML = '';
+    let cells = document.getElementsByClassName('active-cell');
+    cells = Array.from(cells);
+    cells.forEach(button => {
+      button.onclick = null;
+    });
     document.getElementById('message').innerHTML = `${enemy.name} Wins`;
     document.getElementById('after-game').appendChild(newGame);
   }
   if (enemy.board.AllShipsDown()) {
     console.log(`GAME OVER! ${currentPlayer.name} Wins`);
-    document.getElementById('board-1').innerHTML = '';
-    document.getElementById('board-2').innerHTML = '';
+    let cells = document.getElementsByClassName('active-cell');
+    cells = Array.from(cells);
+    cells.forEach(button => {
+      button.onclick = null;
+    });
     document.getElementById('message').innerHTML = `${currentPlayer.name} Wins`;
     document.getElementById('after-game').appendChild(newGame);
   }
