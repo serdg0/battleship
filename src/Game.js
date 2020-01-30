@@ -1,3 +1,4 @@
+// eslint-disable-next-line
 import sampleSize from 'lodash.samplesize';
 
 const attackBot = (enemy, currentPlayer) => {

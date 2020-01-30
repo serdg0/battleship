@@ -1,4 +1,6 @@
+// eslint-disable-next-line
 import shuffle from 'lodash.shuffle';
+// eslint-disable-next-line
 import sampleSize from 'lodash.samplesize';
 import clickFunc from './Game';
 
