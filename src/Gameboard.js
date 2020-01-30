@@ -87,6 +87,7 @@ const Gameboard = ({ ships }) => ({
           boundings.map(b => {
             b.bounded = true;
             b.img = 'bound';
+            return true;
           });
           y += 1;
           pos -= 1;
@@ -113,6 +114,7 @@ const Gameboard = ({ ships }) => ({
           boundings.map(b => {
             b.bounded = true;
             b.img = 'bound';
+            return true;
           });
           x += 1;
           pos -= 1;
