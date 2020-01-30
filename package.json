@@ -32,6 +32,7 @@
   "dependencies": {
     "lodash": "^4.17.15",
     "lodash.samplesize": "^4.2.0",
-    "lodash.shuffle": "^4.2.0"
+    "lodash.shuffle": "^4.2.0",
+    "path": "^0.12.7"
   }
 }
