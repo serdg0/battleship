@@ -16,17 +16,18 @@ const attackBot = (enemy, currentPlayer) => {
 const checkWin = (currentPlayer, enemy) => {
   const newGame = document.createElement('button');
   newGame.innerHTML = 'Start a new game';
+  newGame.setAttribute('id', 'new-game-btn')
   newGame.onclick = () => {
     document.location.reload();
   };
   if (currentPlayer.board.AllShipsDown()) {
-    console.log(`GAME OVER! ${enemy.name} Wins`);
+    console.log(`GAME OVER! ${enemy.name} Won defeating the ${currentPlayer.name}`);
     let cells = document.getElementsByClassName('active-cell');
     cells = Array.from(cells);
     cells.forEach(button => {
       button.onclick = null;
     });
-    document.getElementById('message').innerHTML = `${enemy.name} Wins`;
+    document.getElementById('message').innerHTML = `GAME OVER! ${enemy.name} Won defeating the ${currentPlayer.name}`;
     document.getElementById('after-game').appendChild(newGame);
   }
   if (enemy.board.AllShipsDown()) {
@@ -36,7 +37,7 @@ const checkWin = (currentPlayer, enemy) => {
     cells.forEach(button => {
       button.onclick = null;
     });
-    document.getElementById('message').innerHTML = `${currentPlayer.name} Wins`;
+    document.getElementById('message').innerHTML = `GAME OVER! ${currentPlayer.name} Won defeating the ${enemy.name}`;
     document.getElementById('after-game').appendChild(newGame);
   }
 };

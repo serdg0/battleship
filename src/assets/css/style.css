@@ -4,7 +4,7 @@ html body {
 
 html body h1 {
   color: #484848;
-  margin: 25px auto 50px auto;
+  margin: 40px auto 70px auto;
   text-align: center;
   font-family: 'Bungee Inline', cursive;
   font-size: 72px;
@@ -42,6 +42,37 @@ html body table .ship {
 
 html body table .bounded {
   background-color: #28a745;
+}
+
+html body #message {
+  font-size: 32px;
+  font-weight: 700;
+  margin-top: 25px;
+  height: 100px;
+  padding: 10px;
+  background-color: #2d2d2d;
+  color: #00ff3a;
+  text-align: center;
+}
+
+html body #game-over {
+  padding: 0 65px 0 0;
+}
+
+html body #game {
+  margin-right: 75px;
+}
+
+html body #after-game {
+  text-align: center;
+}
+
+html body #after-game #new-game-btn {
+  color: #ffffff;
+  background-color: #f55b14;
+  font-size: 30px;
+  margin: 35px;
+  width: 350px;
 }
 
 html body .board {

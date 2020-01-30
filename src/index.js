@@ -70,7 +70,7 @@ function gameStarter() {
 
   const compShips = [compcarrier, compbattleship, compsubmarine, compdestroyer, comppatrolBoat];
 
-  const player = Player({ id: 0, name: 'Player', ships: playerShips });
+  const player = Player({ id: 0, name: 'Human', ships: playerShips });
   const computer = Player({ id: 1, name: 'Evil machine', ships: compShips });
   document.getElementById('board-1').innerHTML = '';
   document.getElementById('board-2').innerHTML = '';

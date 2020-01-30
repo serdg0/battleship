@@ -128,6 +128,7 @@ const compPosition = (computerBoard) => {
 
 function shipPlacement(player, player2) {
   shipPosBoard(player, null, false);
+  document.getElementById('message').textContent = 'Align your ship before selecting your ship';
   const selectors = document.getElementById('selector');
   let direction = false;
   const directionBtn = document.createElement('button');
@@ -140,6 +141,7 @@ function shipPlacement(player, player2) {
   carrierBtn.appendChild(carrierImg);
   carrierBtn.setAttribute('class', 'col-4 ship-img');
   carrierBtn.onclick = () => {
+    document.getElementById('message').textContent = 'Place your ship on the desired position on the board';
     if (direction === false) {
       shipPosBoard(player, player.board.ships[0], false, true);
     } else {
@@ -155,6 +157,7 @@ function shipPlacement(player, player2) {
   battleshipBtn.appendChild(battleshipImg);
   battleshipBtn.setAttribute('class', 'col-4 ship-img');
   battleshipBtn.onclick = () => {
+    document.getElementById('message').textContent = 'Place your ship on the desired position on the board';
     if (direction === false) {
       shipPosBoard(player, player.board.ships[1], false, true);
     } else {
@@ -169,6 +172,7 @@ function shipPlacement(player, player2) {
   submarineBtn.appendChild(submarineImg);
   submarineBtn.setAttribute('class', 'col-4 ship-img');
   submarineBtn.onclick = () => {
+    document.getElementById('message').textContent = 'Place your ship on the desired position on the board';
     if (direction === false) {
       shipPosBoard(player, player.board.ships[2], false, true);
     } else {
@@ -183,6 +187,7 @@ function shipPlacement(player, player2) {
   destroyerBtn.appendChild(destroyerImg);
   destroyerBtn.setAttribute('class', 'col-4 ship-img');
   destroyerBtn.onclick = () => {
+    document.getElementById('message').textContent = 'Place your ship on the desired position on the board';
     if (direction === false) {
       shipPosBoard(player, player.board.ships[3], false, true);
     } else {
@@ -197,6 +202,7 @@ function shipPlacement(player, player2) {
   patrolboatBtn.appendChild(patrolboatImg);
   patrolboatBtn.setAttribute('class', 'col-4 ship-img');
   patrolboatBtn.onclick = () => {
+    document.getElementById('message').textContent = 'Place your ship on the desired position on the board';
     if (direction === false) {
       shipPosBoard(player, player.board.ships[4], false, true);
     } else {
@@ -228,6 +234,7 @@ function shipPlacement(player, player2) {
     if (counter === 5) {
       document.getElementById('setup-board').innerHTML = '';
       document.getElementById('selector').innerHTML = '';
+      document.getElementById('message').textContent = '';
       compPosition(player2.board);
       document.getElementById('board-1').appendChild(renderPBoard(player.board));
       document.getElementById('board-2').appendChild(renderEBoard(player2, player));
