@@ -1,0 +1,96 @@
+html {
+  body {
+    font-family: 'Courier Prime', monospace;
+    h1 {
+      color: #484848;
+      margin: 40px auto 70px auto;
+      text-align: center;
+      font-family: 'Bungee Inline', cursive;
+      font-size: 72px;
+    }
+    table {
+      max-width: 500px;
+      margin: 0 auto;
+      table-layout: fixed;
+      border-collapse: collapse;
+      th,
+      td {
+        border-collapse: collapse;
+      }
+      button {
+        background-color: #2d2d2d;
+        color: #ffffff;
+        height: 50px;
+        width: 50px;
+        background-size: cover;
+        margin: -1px;
+        border: none;
+      }
+      .pressed {
+        background-color: #ffc400;
+      }
+      .ship {
+        background-color: #fd3939;
+      }
+      .bounded {
+        background-color: #28a745;
+      }
+    }
+    #message {
+      font-size: 32px;
+      font-weight: 400;
+      border: 5px solid #fd3939;
+      margin-top: 25px;
+      height: 150px;
+      padding: 10px;
+      background-color: #2d2d2d;
+      color: #00ff3a;
+      text-align: center;
+    }
+    #game-over {
+      padding: 0 65px 0 0;
+    }
+    #game {
+      margin-right: 75px;
+    }
+    #after-game {
+      text-align: center;
+      #new-game-btn {
+        color: #ffffff;
+        background-color: #f55b14;
+        font-size: 30px;
+        margin: 35px;
+        width: 350px;
+      }
+    }
+    .board {
+      width: 500px;
+    }
+    .ship-img {
+      height: 250px;
+      background-color: #28a745;
+      border: 1px solid #4eca6b;
+      img {
+        scale: 0.8;
+      }
+    }
+    .ship-img:disabled {
+      background-color: #4eca6b;
+    }
+    .carrier {
+      height: 260px;
+    }
+    .set-div {
+      padding: 0;
+      background-color: #4eca6b;
+      button {
+        font-size: 24px;
+        font-weight: 700;
+        background-color: #28a745;
+        border: 1px solid #4eca6b;
+        width: 100%;
+        height: 50%;
+      }
+    }
+  }
+}

@@ -1,0 +1,114 @@
+html body {
+  font-family: 'Courier Prime', monospace;
+}
+
+html body h1 {
+  color: #484848;
+  margin: 40px auto 70px auto;
+  text-align: center;
+  font-family: 'Bungee Inline', cursive;
+  font-size: 72px;
+}
+
+html body table {
+  max-width: 500px;
+  margin: 0 auto;
+  table-layout: fixed;
+  border-collapse: collapse;
+}
+
+html body table th,
+html body table td {
+  border-collapse: collapse;
+}
+
+html body table button {
+  background-color: #2d2d2d;
+  color: #ffffff;
+  height: 50px;
+  width: 50px;
+  background-size: cover;
+  margin: -1px;
+  border: none;
+}
+
+html body table .pressed {
+  background-color: #ffc400;
+}
+
+html body table .ship {
+  background-color: #fd3939;
+}
+
+html body table .bounded {
+  background-color: #28a745;
+}
+
+html body #message {
+  font-size: 32px;
+  font-weight: 400;
+  border: 5px solid #fd3939;
+  margin-top: 25px;
+  height: 150px;
+  padding: 10px;
+  background-color: #2d2d2d;
+  color: #00ff3a;
+  text-align: center;
+}
+
+html body #game-over {
+  padding: 0 65px 0 0;
+}
+
+html body #game {
+  margin-right: 75px;
+}
+
+html body #after-game {
+  text-align: center;
+}
+
+html body #after-game #new-game-btn {
+  color: #ffffff;
+  background-color: #f55b14;
+  font-size: 30px;
+  margin: 35px;
+  width: 350px;
+}
+
+html body .board {
+  width: 500px;
+}
+
+html body .ship-img {
+  height: 250px;
+  background-color: #28a745;
+  border: 1px solid #4eca6b;
+}
+
+html body .ship-img img {
+  scale: 0.8;
+}
+
+html body .ship-img:disabled {
+  background-color: #4eca6b;
+}
+
+html body .carrier {
+  height: 260px;
+}
+
+html body .set-div {
+  padding: 0;
+  background-color: #4eca6b;
+}
+
+html body .set-div button {
+  font-size: 24px;
+  font-weight: 700;
+  background-color: #28a745;
+  border: 1px solid #4eca6b;
+  width: 100%;
+  height: 50%;
+}
+/*# sourceMappingURL=style.css.map */
