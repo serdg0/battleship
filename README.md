@@ -1,11 +1,13 @@
 # Battleship
-Task from [The Odin Project](https://www.theodinproject.com/courses/javascript/lessons/battleship) for the [microverse](https://www.microverse.org/) curriculum. 
+The classic Battleship game. Feel the nostalgia with this simple and fun version in your browser!
 
 ![battleship](https://user-images.githubusercontent.com/49207642/78932485-2b9db080-7a6d-11ea-9775-945af0597e14.png)
 
 We worked with OOP, Objects, Constructors, Factory Functions, The Module Pattern, ES6 Notation, Webpack and Testing with Jest.
 
-Click here for a [live](https://serdg0.github.io/battleship/) version.
+## Live Demo
+
+[Live Demo Link](https://serdg0.github.io/battleship/)
 
 ## Built with
 * [Node](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm)
@@ -15,16 +17,11 @@ Click here for a [live](https://serdg0.github.io/battleship/) version.
 * CSS
 
 
-## Live Demo
-
-[Live Demo Link](https://serdg0.github.io/battleship/)
-
-
 ## Getting Started
 
-Place your ships by selecting them and placing them in the board. Click start game, and enjoy!
+Place your ships by selecting them and placing them in the board ( no dragging! ). Once you placed all of the ships, click start game and enjoy!
 
-### Run tests
+## Run tests
 
 - Clone this repository.
 
@@ -40,15 +37,15 @@ Place your ships by selecting them and placing them in the board. Click start ga
 
 [Github](https://github.com/serdg0) | [Twitter](https://twitter.com/thesergiod) | [Linkedin](https://www.linkedin.com/in/sergiodiaz-dev/) | [Portfolio](https://sergiodev.netlify.com/)
 
+## Potential features
+
+- Better AI for computer oponent.
+
 ## 🤝 Contributing
 
 Contributions, issues and feature requests are welcome!
 
 Feel free to check the [issues page](issues/).
-
-A potential feature would be:
-
-- Better AI for computer oponent.
 
 ## Show your support
 
